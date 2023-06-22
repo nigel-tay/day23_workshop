@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+<body>
+    <h1>LANDING PAGE</h1>
+    <form action="/order" method="GET" data-th-object="${order}">
+        <input data-th-field="*{id}" type="text">
+        <div data-th-unless="*{orderDate == null}">
+            <p>ORDER DATE: <span data-th-text="*{orderDate}"></span></p>
+            <p>CUSTOMER ID: <span data-th-text="*{customerId}"></span></p>
+            <p>TOTAL COST: <span data-th-text="*{total}"></span></p>
+            <p>COST PRICE: <span data-th-text="*{costPrice}"></span></p>
+        </div>
+        <button type="submit">SEARCH FOR YO ORDER!!</button>
+    </form>
+</body>
+</html>
